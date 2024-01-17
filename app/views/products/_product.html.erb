@@ -1,0 +1,24 @@
+<div id="<%= dom_id product %>" class="card">
+  <div class="card-body">
+    <h1 class="card-title">Product Details</h1>
+
+    <dl class="row">
+      <dt class="col-sm-3">UPC Code:</dt>
+      <dd class="col-sm-9"><%= product.upc_code %></dd>
+
+      <dt class="col-sm-3">Product Name:</dt>
+      <dd class="col-sm-9"><%= product.product_name %></dd>
+
+      <dt class="col-sm-3">Brand:</dt>
+      <dd class="col-sm-9"><%= product.brand %></dd>
+
+      <dt class="col-sm-3">Quantity:</dt>
+      <dd class="col-sm-9"><%= product.quantity %></dd>
+
+      <dt class="col-sm-3">Image:</dt>
+      <dd class="col-sm-9">
+        <%= image_tag product.image_url, alt: 'Product Image', class: 'img-fluid rounded' %>
+      </dd>
+    </dl>
+  </div>
+</div>

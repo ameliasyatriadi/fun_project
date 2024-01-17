@@ -1,0 +1,12 @@
+<div class="container mt-3 mb-3">
+  <h1>Add a Product</h1>
+  <p>API: <i>http://world.openfoodfacts.org/api/v0/product/upc_code.json</i></p>
+
+  <%= render "form", product: @product %>
+
+  <br>
+
+  <div>
+    <p>Click here for <%= link_to "List of Products", products_path %></p>
+  </div>
+</div>

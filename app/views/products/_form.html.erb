@@ -1,0 +1,25 @@
+<%= form_with(model: product, data: { controller: "form" }) do |form| %>
+  <% if product.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+        <% product.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group row mb-3">
+    <%= form.label :upc_code, "Enter UPC Code:", class: "control-label col-md-2", style: "display: block" %>
+    <div class="col-md-3">
+      <%= form.text_field :upc_code, class: "form-control", placeholder: "e.g., 3661112054465" %>
+    </div>
+  </div>
+
+  <div class="md-5">
+    <button type="button" class="btn btn-primary" data-action="click->form#submitForm">Submit</button>
+    <button type="button" class="btn btn-secondary" data-action="click->form#cancelForm">Cancel</button>
+  </div>
+<% end %>
